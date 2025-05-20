@@ -13,7 +13,7 @@ y = df['Price']
 model = LinearRegression()
 model.fit(X, y)
 
-# Step 4: Visualize data
+# Step 4: Visualize data, can skip this code to directly get the prediction
 plt.scatter(df['Bedrooms'], df['Price'], color='blue', label='Bedrooms')
 plt.scatter(df['Washrooms'], df['Price'], color='green', label='Washrooms')
 plt.xlabel("Bedrooms / Washrooms")
@@ -26,7 +26,8 @@ plt.show()
 bedrooms = int(input("Enter number of bedrooms: "))
 washrooms = int(input("Enter number of washrooms: "))
 
-# Step 6: Predict the price without warning
+# Step 6: Predict the price without warning,
+# there are coloumn names with the value, without defining coloumns will get warning but the code will still work
 input_data = pd.DataFrame([[bedrooms, washrooms]], columns=['Bedrooms', 'Washrooms'])
 predicted_price = model.predict(input_data)[0]
 print(f"Predicted House Price: ${predicted_price:,.2f}")
